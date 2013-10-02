@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">FillydelphiaRadio</string>
+    <string name="action_settings">Settings</string>
+    <string name="status">You\'re not listening!?</string>
+    <string name="stream_on">Play</string>
+    <string name="stream_off">Stop</string>
+    <string name="drs">The Delphia Request System</string>
+    <string name="fdr">Fillydelphia Radio\'s Homepage</string>
+
+</resources>
