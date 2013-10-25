@@ -125,4 +125,10 @@ public class MainActivity extends Activity {
 	            return super.onOptionsItemSelected(item);
 	    }
 	}
+	public static <String> String[] nowPlaying(){
+		String[] s;
+		//Get yql.php
+		//cut it up
+		return s;
+	}
 }
