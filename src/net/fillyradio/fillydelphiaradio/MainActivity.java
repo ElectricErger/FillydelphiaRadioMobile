@@ -2,6 +2,7 @@ package net.fillyradio.fillydelphiaradio;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -48,6 +49,7 @@ public class MainActivity extends Activity {
 		liveStream = MediaPlayer.create(getApplicationContext(), radio);
 
 		// Making the clickables clickable
+		
 		// On button
 		streamOn.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
@@ -55,8 +57,6 @@ public class MainActivity extends Activity {
 				if (!liveStream.isPlaying())
 					liveStream.start();
 				
-				//And Delphia gets her NP direct from the Shoutcast feed
-				//It's embedded in the stream as IDv2 Metadata
 				//JS-PHP
 			}
 
@@ -80,6 +80,7 @@ public class MainActivity extends Activity {
 				}
 			}
 		});
+		
 		// Banner will redirect you to Fillydelphia Radio
 		logo.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
@@ -88,10 +89,13 @@ public class MainActivity extends Activity {
 				startActivity(goToFDR);
 			}
 		});
+		
 		// Delphia will redirect you to the Delphia request system...maybe or
-		// she'll make her own "Splash"
 		delphia.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
+				//NEW IDEA: Make a bot to parse in requests via IRC
+				//Blit the response of Delphia to the screen 1-10 objects
+				//If you click on one of them send that one to Delphia
 				Intent goToDelphia = new Intent(
 						"net.fillyradio.fillydelphiaradio.DELPHIAREQUESTSYSTEM");
 				startActivity(goToDelphia);
@@ -125,10 +129,16 @@ public class MainActivity extends Activity {
 	            return super.onOptionsItemSelected(item);
 	    }
 	}
-	public static <String> String[] nowPlaying(){
-		String[] s;
-		//Get yql.php
+	public static String[] nowPlaying() throws IOException{
+		String[] s= new String[10];
+		
+		URL u = new URL("http://fillyradio.com:8000/played.html");
+		URLConnection c = u.openConnection();
+		InputStream r = c.getInputStream();
+		BufferedReader reader = new BufferedReader(new InputStreamReader(r));
+		for(String line; (line = reader.readLine()) != null;) System.out.println(line);
 		//cut it up
+//		s[0] = ;
 		return s;
 	}
 }

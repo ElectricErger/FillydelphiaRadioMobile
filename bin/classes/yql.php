@@ -1,3 +1,0 @@
-([{
-"results": "There are currently <a href=\"http://audioprobe.net/status.php\" style=\"color: #ffffff;text-decoration:none;\">10</a> listeners tuned in.<br/>philsterman10 - Winter Wrap up (Colt Version)<br/>PhonyBrony feat. Giggly Maria - Beyond The Stars (JayB Remix)<br/>AcousticBrony - Lunar Nocturnality ~ Celestial Diurnality (Original)<br/>AgileDash - Sunset Comes Just Before Twilight(SunsetRose\'s Theme Song)<br/>Aviators - In Wonder<br/>Sweeper - Aviators - Applebucking Sweeper<br/>General Mumble - Mumble Invades Equestria<br/>The Living Tombstone - Winter Wrap Up (Living Tombstone\'s Remix)<br/>Sgt-Whip - Party Cannon (Sgt-Whip Remix)<br/>General Mumble - Hydra Pulse (Glitcha-twich Remix) (vs. Lenich)"
-    }])

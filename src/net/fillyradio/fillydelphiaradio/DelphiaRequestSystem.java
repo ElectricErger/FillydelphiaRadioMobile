@@ -6,20 +6,14 @@ import android.view.Menu;
 import android.webkit.WebView; //TESTING
 
 public class DelphiaRequestSystem extends Activity {
-
-	WebView webView;
-	
-	
-//NOTE EVERYTHING IN HERE IS A TEST
-	//Everything seemed successful. Problems: we don't want to open the browser
-	
 	
 	protected void onCreate(Bundle delphiaRedirect) {
 		super.onCreate(delphiaRedirect);
 		setContentView(R.layout.delphia_request_system);
-		
-		webView = (WebView) findViewById(R.id.delphia_r_s);
-		webView.loadUrl("http://fillyradio.com/request/");
+		//Make 10 objects (buttons/text)
+		//If there's less than 10 don't blit the ones that don't exist
+		//
+		//MainActivity.nowPlaying();
 	}
 
 	
