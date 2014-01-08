@@ -16,37 +16,40 @@
         android:layout_alignParentTop="true"
         android:src="@drawable/fdr_logo2" />
 
+    <ImageButton
+        android:id="@+id/start_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/banner"
+        android:layout_alignTop="@+id/np"
+        android:src="@drawable/play" />
+    
     <TextView
         android:id="@+id/np"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
         android:layout_below="@id/banner"
-        android:layout_centerHorizontal="true"
-        android:text="You\'re not listening"
+        android:layout_toRightOf="@+id/imageButton1"
+        android:text="You\&apos;re not listening"
         android:textColor="#2EFE2E"
         android:textSize="20sp" />
-
-    <Button
-        android:id="@+id/play"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/np"
-        android:text="@string/stream_on" />
-
-    <Button
-        android:id="@+id/stop"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/play"
-        android:text="@string/stream_off" />
 
     <ImageView
         android:id="@+id/mascot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:layout_below="@+id/refresh"
+        android:layout_centerInParent="true"
         android:src="@drawable/delphia" />
+
+    <SeekBar
+        android:id="@+id/seekBar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/mascot" />
+
 
 
 </RelativeLayout>

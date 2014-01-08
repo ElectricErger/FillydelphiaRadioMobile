@@ -30,11 +30,4 @@
 		<nature>com.android.ide.eclipse.adt.AndroidNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>JS-PHP</name>
-			<type>2</type>
-			<location>C:/Users/Max/Downloads/JS-PHP</location>
-		</link>
-	</linkedResources>
 </projectDescription>

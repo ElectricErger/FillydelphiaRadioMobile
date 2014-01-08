@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 
@@ -14,7 +13,6 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -24,8 +22,7 @@ import android.widget.*;
 
 public class MainActivity extends Activity {
 
-	Button streamOn, streamOff, refresh;
-	ImageView logo, delphia;
+	ImageView logo, delphia, isPlay, streamOnOff;
 	TextView nowPlaying;
 	Uri radio;
 	MediaPlayer liveStream;
@@ -40,43 +37,35 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 
 		// Making all the clickables
-		streamOn = (Button) findViewById(R.id.play);
-		streamOff = (Button) findViewById(R.id.stop);
+		streamOnOff = (ImageView) findViewById(R.id.start_stop);
 		nowPlaying = (TextView) findViewById(R.id.np);
 		logo = (ImageView) findViewById(R.id.banner);
 		delphia = (ImageView) findViewById(R.id.mascot);
+		//Setting up stream
 		radio = Uri.parse("http://listen.fillyradio.com:8000/");
 		liveStream = MediaPlayer.create(getApplicationContext(), radio);
 
 		// Making the clickables clickable
 		
-		// On button
-		streamOn.setOnClickListener(new OnClickListener() {
+		// On-Off button still in the works
+		streamOnOff.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				// Plays the stream
-				if (!liveStream.isPlaying())
-					liveStream.start();
-				
-				//JS-PHP
-			}
-
-		});
-		// Off button (to be replaced with a dynamic Play/Pause button
-		streamOff.setOnClickListener(new OnClickListener() {
-			public void onClick(View v) {
-				nowPlaying.setText("Aww don't leave.");
 				if (liveStream.isPlaying()) {
+					streamOnOff.setImageResource(R.drawable.pause);
+					nowPlaying.setText("Aww don't leave.");
 					liveStream.stop();
 					liveStream.reset();
 					liveStream = MediaPlayer.create(getApplicationContext(),
 							radio);
 					try {
 						liveStream.prepare();
-					} catch (IllegalStateException e) {
-						e.printStackTrace();
-					} catch (IOException e) {
+					} catch (Exception e) {
 						e.printStackTrace();
 					}
+				}
+				else{
+					nowPlaying.setText("Welcome!");
+					liveStream.start();
 				}
 			}
 		});

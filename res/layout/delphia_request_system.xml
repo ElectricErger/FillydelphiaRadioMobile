@@ -4,11 +4,56 @@
     android:layout_height="match_parent"
     android:background="@drawable/fdr_background"
     android:orientation="vertical" >
-
-    <WebView
-        android:id="@+id/delphia_r_s"
+   
+    <ImageView
+        android:id="@+id/mascot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/delphia" />
+    
+    <RadioGroup
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" 
-        />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/button_song"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="Song"
+            android:checked="true"
+            android:textColor="#2EFE2E" />
+
+        <RadioButton
+            android:id="@+id/button_artist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:text="Artist"
+            android:textColor="#2EFE2E" />
+
+    </RadioGroup>
+    
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#2EFE2E"
+        android:textSize="20sp"
+        android:text="Search by song"
+    />
+
+    <EditText
+        android:id="@+id/songRequest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/searchRequest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search" />
 
 </LinearLayout>
